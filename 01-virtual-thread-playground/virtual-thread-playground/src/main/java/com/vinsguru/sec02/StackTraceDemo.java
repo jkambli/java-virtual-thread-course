@@ -11,7 +11,6 @@ public class StackTraceDemo {
         demo(Thread.ofVirtual().name("virtual-", 1));
 
         CommonUtils.sleep(Duration.ofSeconds(2));
-
     }
 
     private static void demo(Thread.Builder builder){
@@ -20,6 +19,4 @@ public class StackTraceDemo {
             builder.start(() -> Task.execute(j));
         }
     }
-
-
 }

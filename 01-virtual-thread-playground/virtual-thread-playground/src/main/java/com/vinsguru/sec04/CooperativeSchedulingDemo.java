@@ -12,7 +12,6 @@ import java.time.Duration;
  */
 
 public class CooperativeSchedulingDemo {
-
     private static final Logger log = LoggerFactory.getLogger(CooperativeSchedulingDemo.class);
 
     static {
@@ -21,7 +20,6 @@ public class CooperativeSchedulingDemo {
     }
 
     public static void main(String[] args) {
-
         var builder = Thread.ofVirtual();
         var t1 = builder.unstarted(() -> demo(1));
         var t2 = builder.unstarted(() -> demo(2));
@@ -30,7 +28,6 @@ public class CooperativeSchedulingDemo {
         t2.start();
         t3.start();
         CommonUtils.sleep(Duration.ofSeconds(2));
-
     }
 
     private static void demo(int threadNumber){
@@ -41,6 +38,4 @@ public class CooperativeSchedulingDemo {
         }
         log.info("thread-{} ended", threadNumber);
     }
-
-
 }

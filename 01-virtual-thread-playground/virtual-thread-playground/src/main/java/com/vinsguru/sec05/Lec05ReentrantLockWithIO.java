@@ -27,11 +27,9 @@ public class Lec05ReentrantLockWithIO {
     }
 
     static void main(String[] args) {
-
         demo(Thread.ofVirtual());
 
         CommonUtils.sleep(Duration.ofSeconds(15));
-
     }
 
     private static void demo(Thread.Builder builder){
@@ -53,15 +51,14 @@ public class Lec05ReentrantLockWithIO {
                 log.info("Fetch ended. {}", Thread.currentThread());
             });
         }
-
     }
 
     // IO Task 1 - requires synchronization
     private static void updateSharedDocument(){
-        try{
+        try {
             lock.lock();
             CommonUtils.sleep(Duration.ofSeconds(10));
-        }finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -70,5 +67,4 @@ public class Lec05ReentrantLockWithIO {
     private static void fetchUserProfile(){
         CommonUtils.sleep(Duration.ofSeconds(1));
     }
-
 }

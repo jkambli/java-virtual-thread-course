@@ -7,12 +7,14 @@ import java.util.concurrent.CountDownLatch;
  */
 public class InboundOutboundTaskDemo {
 
-    private static final int MAX_PLATFORM = 10_000;
-    private static final int MAX_VIRTUAL = 20;
+    private static final int MAX_PLATFORM = 10;
+    private static final int MAX_VIRTUAL = 1000;
 
     public static void main(String[] args) throws InterruptedException {
-        platformThreadDemo1();
-       // virtualThreadDemo();
+        //platformThreadDemo1();
+        //platformThreadDemo2();
+        //platformThreadDemo3();
+        virtualThreadDemo();
     }
 
     /*
@@ -30,7 +32,7 @@ public class InboundOutboundTaskDemo {
         To create platform thread using Thread.Builder
     */
     private static void platformThreadDemo2(){
-        var builder = Thread.ofPlatform().name("vins", 1);
+        var builder = Thread.ofPlatform().name("jk", 1);
         for (int i = 0; i < MAX_PLATFORM; i++) {
             int j = i;
             Thread thread = builder.unstarted(() -> Task.ioIntensive(j));

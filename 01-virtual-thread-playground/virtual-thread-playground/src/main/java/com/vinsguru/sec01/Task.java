@@ -15,8 +15,8 @@ public class Task {
             log.info("starting I/O task {}. Thread Info: {}", i, Thread.currentThread());
             Thread.sleep(Duration.ofSeconds(10));
             log.info("ending I/O task {}. Thread Info: {}", i, Thread.currentThread());
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        } catch (InterruptedException interruptedException) {
+            throw new RuntimeException(interruptedException);
         }
 
     }

@@ -22,7 +22,6 @@ public class CPUTaskDemo {
             totalTimeTaken = CommonUtils.timer(() -> demo(Thread.ofPlatform()));
             log.info("Total time taken with platform {} ms", totalTimeTaken);
         }
-
     }
 
     private static void demo(Thread.Builder builder){
@@ -35,9 +34,8 @@ public class CPUTaskDemo {
         }
         try {
             latch.await();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        } catch (InterruptedException interruptedException) {
+            throw new RuntimeException(interruptedException);
         }
     }
-
 }

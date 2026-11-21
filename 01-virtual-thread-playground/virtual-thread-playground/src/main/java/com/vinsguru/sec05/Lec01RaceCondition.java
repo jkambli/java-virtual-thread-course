@@ -41,5 +41,4 @@ public class Lec01RaceCondition {
     private static void inMemoryTask(){
         list.add(1);
     }
-
 }

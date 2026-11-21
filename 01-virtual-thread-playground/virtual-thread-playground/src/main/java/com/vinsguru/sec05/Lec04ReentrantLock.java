@@ -43,12 +43,11 @@ public class Lec04ReentrantLock {
     }
 
     private static void inMemoryTask(){
-        try{
+        try {
             lock.lock();
             list.add(1);
-        }finally {
+        } finally {
             lock.unlock();
         }
     }
-
 }

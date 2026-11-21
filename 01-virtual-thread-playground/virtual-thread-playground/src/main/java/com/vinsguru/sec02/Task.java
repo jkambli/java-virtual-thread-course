@@ -18,8 +18,8 @@ public class Task {
         log.info("starting task {}", i);
         try{
             method1(i);
-        }catch (Exception e){
-            log.error("error for {}", i, e);
+        }catch (Exception exception){
+            log.error("error for {}", i, exception);
         }
         log.info("ending task {}", i);
     }
@@ -28,8 +28,8 @@ public class Task {
         CommonUtils.sleep(Duration.ofMillis(300));
         try{
             method2(i);
-        }catch (Exception e){
-            throw new RuntimeException(e);
+        }catch (Exception exception){
+            throw new RuntimeException(exception);
         }
     }
 
@@ -41,7 +41,7 @@ public class Task {
     private static void method3(int i){
         CommonUtils.sleep(Duration.ofMillis(500));
         if(i == 4){
-            throw new IllegalArgumentException("i can not be 4");
+            throw new IllegalArgumentException("i cannot be 4");
         }
     }
 

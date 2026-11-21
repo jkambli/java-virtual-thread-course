@@ -40,5 +40,4 @@ public class Lec02Synchronization {
     private static synchronized void inMemoryTask(){
         list.add(1);
     }
-
 }

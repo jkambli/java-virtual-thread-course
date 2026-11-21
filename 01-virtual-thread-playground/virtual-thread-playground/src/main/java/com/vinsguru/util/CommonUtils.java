@@ -13,7 +13,7 @@ public class CommonUtils {
     public static void sleep(String taskName, Duration duration){
         try {
             Thread.sleep(duration);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException interruptedException) {
             log.info("{} task is cancelled", taskName);
         }
     }
@@ -21,8 +21,8 @@ public class CommonUtils {
     public static void sleep(Duration duration){
         try {
             Thread.sleep(duration);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        } catch (InterruptedException interruptedException) {
+            throw new RuntimeException(interruptedException);
         }
     }
 

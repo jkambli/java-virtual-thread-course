@@ -12,11 +12,13 @@ public class Lec01ThreadFactory {
     private static final Logger log = LoggerFactory.getLogger(Lec01ThreadFactory.class);
 
     public static void main(String[] args) {
-
-        demo(Thread.ofVirtual().name("vins", 1).factory());
+        /**
+         * Factory is useful mostly in cases where the thread in turn spawns new threads as part of its execution.
+         * Thread factory is thread-safe and hence can be used in any case.
+         */
+        demo(Thread.ofVirtual().name("jk", 1).factory());
 
         CommonUtils.sleep(Duration.ofSeconds(3));
-
     }
 
     /*
@@ -25,7 +27,6 @@ public class Lec01ThreadFactory {
         It is a simple demo. In the real life, lets use ExecutorService etc
         Virtual threads are cheap to create.
      */
-
     private static void demo(ThreadFactory factory){
         for (int i = 0; i < 30; i++) {
             var t = factory.newThread(() -> {
@@ -41,5 +42,4 @@ public class Lec01ThreadFactory {
             t.start();
         }
     }
-
 }
